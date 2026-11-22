@@ -1,9 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="hero"><h1>Book flights and hotels</h1><p>A simple FastAPI project inspired by MakeMyTrip.</p></section>
+<section class="hero"><span class="eyebrow">YOUR NEXT JOURNEY STARTS HERE</span><h1>Make every trip count</h1><p>Find a flight, check into somewhere lovely, and keep every trip in one place.</p></section>
 <form class="card search-form" action="/search" method="get">
-  <label>Destination<input name="destination" placeholder="e.g. Delhi or Goa" required></label>
-  <label>Travel date<input type="date" name="travel_date" min="{{ today }}" required></label>
-  <button type="submit">Search</button>
+  <div class="search-fields">
+    <label>Going to<input name="destination" placeholder="e.g. Delhi or Goa" required></label>
+    <label>Travel date<input type="date" name="travel_date" min="{{ today }}" required></label>
+    <label>I'm looking for
+      <select name="travel_type"><option value="all">Flights &amp; hotels</option><option value="flight">Flights</option><option value="hotel">Hotels</option></select>
+    </label>
+  </div>
+  <button type="submit">Search trips</button>
 </form>
+<section class="popular">
+  <h2>Popular destinations</h2>
+  <div class="destination-grid">
+    {% for destination, note in [("Goa", "Beach escapes"), ("Delhi", "Culture and history"), ("Mumbai", "The city that never sleeps"), ("Jaipur", "A royal getaway")] %}
+      <a class="destination-card" href="/search?destination={{ destination }}"><strong>{{ destination }}</strong><span>{{ note }}</span></a>
+    {% endfor %}
+  </div>
+</section>
 {% endblock %}

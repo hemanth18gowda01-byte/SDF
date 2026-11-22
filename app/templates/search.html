@@ -1,8 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Available travel options{% if destination %} for {{ destination }}{% endif %}</h1>
-<p class="muted">Date selected: {{ travel_date or 'Not selected' }}</p>
+<section class="results-heading">
+  <div><span class="eyebrow">TRAVELGO SEARCH</span><h1>Available {{ travel_type if travel_type != "all" else "travel" }} options{% if destination %} for {{ destination }}{% endif %}</h1></div>
+  <p class="muted">{{ results|length }} options{% if travel_date %} · {{ travel_date }}{% endif %}</p>
+</section>
 {% if results %}{% for item in results %}
-<article class="card result"><div><span class="tag">{{ item.type }}</span><h2>{{ item.name }}</h2><p>{{ item.from_city }}{% if item.from_city %} to {% endif %}{{ item.to_city }} | {{ item.time }}</p></div><div class="right"><strong>Rs. {{ item.price }}</strong><a class="button" href="/book/{{ item.id }}">Select</a></div></article>
-{% endfor %}{% else %}<p>No sample options are available for this destination. Try Delhi, Mumbai, Goa, or Mysuru.</p>{% endif %}
+<article class="card result">
+  <div><span class="tag">{{ item.type }}</span><h2>{{ item.name }}</h2><p>{% if item.from_city %}{{ item.from_city }} to {% endif %}{{ item.to_city }} · {{ item.time }}</p><p class="muted">{{ item.date }}</p></div>
+  <div class="right"><span class="muted">Starting from</span><strong class="price">₹{{ "{:,}".format(item.price) }}</strong><a class="button" href="/book/{{ item.id }}">Book now</a></div>
+</article>
+{% endfor %}{% else %}
+<section class="card empty-state"><h2>No trips found for those dates</h2><p>Try another date or explore a different destination.</p><a class="button" href="/">Change search</a></section>
+{% endif %}
 {% endblock %}

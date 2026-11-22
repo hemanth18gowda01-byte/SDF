@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>My bookings</h1>
-{% if bookings %}{% for booking in bookings %}<article class="card result"><div><span class="tag">{{ booking.status }}</span><h2>{{ booking.option.name }}</h2><p>{{ booking.booking_id }} | {{ booking.customer_name }} | {{ booking.option.to_city }}</p></div><strong>Rs. {{ booking.option.price }}</strong></article>{% endfor %}{% else %}<p>No bookings have been made yet. Start by searching for travel.</p>{% endif %}
+<span class="eyebrow">YOUR TRAVELGO ACCOUNT</span><h1>My trips</h1>
+{% if bookings %}{% for booking in bookings %}
+<article class="card result">
+  <div><span class="tag">{{ booking.status }}</span><h2>{{ booking.option.name }}</h2><p>{{ booking.option.type }} · {{ booking.option.to_city }} · {{ booking.option.date }}</p><p class="muted">Booking ID: {{ booking.booking_id }}</p></div>
+  <div class="right"><strong class="price">₹{{ "{:,}".format(booking.option.price) }}</strong><a class="text-link" href="/confirmation/{{ booking.booking_id }}">View details</a></div>
+</article>
+{% endfor %}{% else %}
+<section class="card empty-state"><h2>Your next adventure is waiting</h2><p>Your confirmed bookings will show up here.</p><a class="button" href="/">Explore trips</a></section>
+{% endif %}
 {% endblock %}

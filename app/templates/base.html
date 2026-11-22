@@ -3,11 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Travel Booking Demo</title>
+  <title>{% block title %}TravelGo | Flights, hotels and holidays{% endblock %}</title>
   <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
 </head>
 <body>
-  <header><a class="brand" href="/">TravelGo</a><nav><a href="/">Search</a><a href="/bookings">My Bookings</a></nav></header>
+  <header>
+    <a class="brand" href="/">TravelGo</a>
+    <nav>
+      <a href="/">Flights &amp; Hotels</a>
+      {% if current_user %}
+        <a href="/bookings">My trips</a>
+        <a href="/profile">Hi, {{ current_user.name.split()[0] }}</a>
+        <form class="nav-form" action="/logout" method="post"><button class="nav-link" type="submit">Log out</button></form>
+      {% else %}
+        <a href="/login">Log in</a>
+        <a class="nav-join" href="/register">Create account</a>
+      {% endif %}
+    </nav>
+  </header>
   <main>{% block content %}{% endblock %}</main>
 </body>
 </html>

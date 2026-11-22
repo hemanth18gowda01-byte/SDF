@@ -1,6 +1,18 @@
 TRAVEL_OPTIONS = [
     {"id": "F101", "type": "Flight", "from_city": "Bengaluru", "to_city": "Delhi", "date": "2026-12-10", "name": "IndiGo 6E 421", "time": "08:10 - 10:55", "price": 5800},
     {"id": "F102", "type": "Flight", "from_city": "Bengaluru", "to_city": "Mumbai", "date": "2026-12-10", "name": "Air India AI 604", "time": "12:40 - 14:20", "price": 4900},
+    {"id": "F103", "type": "Flight", "from_city": "Delhi", "to_city": "Goa", "date": "2026-12-11", "name": "Akasa Air QP 1350", "time": "06:25 - 09:05", "price": 6400},
+    {"id": "F104", "type": "Flight", "from_city": "Mumbai", "to_city": "Jaipur", "date": "2026-12-11", "name": "IndiGo 6E 2165", "time": "09:15 - 11:00", "price": 4200},
+    {"id": "F105", "type": "Flight", "from_city": "Bengaluru", "to_city": "Kochi", "date": "2026-12-12", "name": "Air India Express IX 1132", "time": "14:30 - 15:45", "price": 3600},
+    {"id": "F106", "type": "Flight", "from_city": "Hyderabad", "to_city": "Chennai", "date": "2026-12-12", "name": "IndiGo 6E 739", "time": "17:10 - 18:25", "price": 3100},
+    {"id": "F107", "type": "Flight", "from_city": "Chennai", "to_city": "Bengaluru", "date": "2026-12-15", "name": "Akasa Air QP 1412", "time": "07:20 - 08:20", "price": 2800},
+    {"id": "F108", "type": "Flight", "from_city": "Delhi", "to_city": "Mumbai", "date": "2026-12-15", "name": "Air India AI 887", "time": "19:05 - 21:15", "price": 5300},
     {"id": "H201", "type": "Hotel", "from_city": "", "to_city": "Goa", "date": "2026-12-10", "name": "Seaside Stay Goa", "time": "Check in 14:00", "price": 3200},
     {"id": "H202", "type": "Hotel", "from_city": "", "to_city": "Mysuru", "date": "2026-12-10", "name": "Heritage Inn Mysuru", "time": "Check in 13:00", "price": 2400},
+    {"id": "H203", "type": "Hotel", "from_city": "", "to_city": "Delhi", "date": "2026-12-11", "name": "The Connaught, New Delhi", "time": "Check in 14:00", "price": 6800},
+    {"id": "H204", "type": "Hotel", "from_city": "", "to_city": "Mumbai", "date": "2026-12-11", "name": "Marine Drive Suites", "time": "Check in 12:00", "price": 5400},
+    {"id": "H205", "type": "Hotel", "from_city": "", "to_city": "Jaipur", "date": "2026-12-12", "name": "Pink City Haveli", "time": "Check in 13:00", "price": 2900},
+    {"id": "H206", "type": "Hotel", "from_city": "", "to_city": "Kochi", "date": "2026-12-12", "name": "Backwater Bay Resort", "time": "Check in 14:00", "price": 4100},
+    {"id": "H207", "type": "Hotel", "from_city": "", "to_city": "Chennai", "date": "2026-12-15", "name": "Marina View Hotel", "time": "Check in 12:00", "price": 3600},
+    {"id": "H208", "type": "Hotel", "from_city": "", "to_city": "Bengaluru", "date": "2026-12-15", "name": "Garden City Residency", "time": "Check in 13:00", "price": 3300},
 ]
