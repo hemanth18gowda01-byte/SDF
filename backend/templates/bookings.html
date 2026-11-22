@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>My bookings</h1>
+{% if bookings %}{% for booking in bookings %}<article class="card result"><div><span class="tag">{{ booking.status }}</span><h2>{{ booking.option.name }}</h2><p>{{ booking.booking_id }} | {{ booking.customer_name }} | {{ booking.option.to_city }}</p></div><strong>Rs. {{ booking.option.price }}</strong></article>{% endfor %}{% else %}<p>No bookings have been made yet. Start by searching for travel.</p>{% endif %}
+{% endblock %}

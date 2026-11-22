@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero"><h1>Book flights and hotels</h1><p>A simple FastAPI project inspired by MakeMyTrip.</p></section>
+<form class="card search-form" action="/search" method="get">
+  <label>Destination<input name="destination" placeholder="e.g. Delhi or Goa" required></label>
+  <label>Travel date<input type="date" name="travel_date" min="{{ today }}" required></label>
+  <button type="submit">Search</button>
+</form>
+{% endblock %}

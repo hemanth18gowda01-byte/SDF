@@ -1,0 +1,112 @@
+* {
+     box-sizing: border-box; 
+}
+
+body { 
+    margin: 0;
+    background: #f4f6f9; 
+    color: #1e293b; 
+    font-family: Arial, 
+    sans-serif; 
+}
+
+header { 
+    background: #c92031; 
+    color: white; 
+    display: flex; 
+    justify-content: space-between; 
+    padding: 16px max(7%, 30px); 
+}
+.brand { 
+    color: white; 
+    font-weight: bold; 
+    font-size: 21px; 
+    text-decoration: none; 
+}
+
+nav a { 
+    color: white; 
+    margin-left: 18px; 
+    text-decoration: none; 
+}
+
+main { 
+    max-width: 850px; 
+    margin: 42px auto; 
+    padding: 0 20px; 
+}.hero { 
+    text-align: center; 
+    margin-bottom: 26px; 
+}.hero h1 { 
+    font-size: 32px; 
+    margin-bottom: 8px; 
+}.card { 
+    background: white; 
+    border: 1px solid #dbe2ea; 
+    border-radius: 8px; 
+    padding: 22px; 
+    margin: 16px 0; 
+    box-shadow: 0 1px 3px #00000012; }.search-form, .booking-form { 
+    display: grid; 
+    gap: 16px; 
+}
+
+label { 
+    font-weight: bold; 
+    display: grid; 
+    gap: 7px; 
+}
+
+input { 
+    border: 1px solid #9ca3af; 
+    border-radius: 4px; 
+    font-size: 16px; 
+    padding: 10px; 
+}
+
+button, 
+.button { 
+    border: 0; 
+    border-radius: 4px; 
+    background: #c92031; 
+    color: white; 
+    cursor: pointer; 
+    font-size: 16px; 
+    padding: 11px 18px; 
+    text-decoration: none; 
+    text-align: center; 
+}
+.result { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 20px; }
+    .result h2 { 
+        font-size: 20px; 
+        margin: 8px 0; 
+    }
+    .right { 
+        display: grid; 
+        gap: 12px;
+        min-width: 115px; 
+        text-align: right; 
+    }
+.tag { 
+    background: #e8f5e9; 
+    border-radius: 12px; 
+    color: #17662a; 
+    font-size: 12px; 
+    padding: 4px 9px; 
+}.muted { 
+    color: #64748b;
+}.confirmation { 
+    text-align: center; 
+}
+
+@media (max-width: 600px) { 
+    .result { 
+        align-items: flex-start; 
+        flex-direction: column; 
+    }.right { 
+        text-align: left; 
+    } }

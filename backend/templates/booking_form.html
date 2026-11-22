@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Complete booking</h1>
+<section class="card"><h2>{{ option.name }}</h2><p>{{ option.type }} to {{ option.to_city }} | Rs. {{ option.price }}</p></section>
+<form class="card booking-form" method="post">
+  <label>Traveller name<input name="name" required></label>
+  <label>Email address<input type="email" name="email" required></label>
+  <label>Phone number<input name="phone" pattern="[0-9]{10}" placeholder="10 digit mobile number" required></label>
+  <button type="submit">Confirm booking</button>
+</form>
+<p class="muted">Demo only: selecting Confirm booking directly records a successful payment.</p>
+{% endblock %}

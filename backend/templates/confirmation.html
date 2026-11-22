@@ -1,0 +1,4 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card confirmation"><h1>Booking confirmed</h1><p>Your booking ID is <strong>{{ booking.booking_id }}</strong>.</p><p>{{ booking.customer_name }}, your {{ booking.option.type|lower }} booking for {{ booking.option.to_city }} has been saved.</p><p>Status: <span class="tag">{{ booking.status }}</span></p><a class="button" href="/bookings">View my bookings</a></section>
+{% endblock %}
